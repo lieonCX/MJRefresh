@@ -30,7 +30,7 @@
 - (UILabel *)stateLabel
 {
     if (!_stateLabel) {
-        [self addSubview:_stateLabel = [UILabel mj_label]];
+        [self addSubview:_stateLabel = [UILabel label]];
     }
     return _stateLabel;
 }
@@ -44,7 +44,7 @@
 }
 
 - (NSString *)titleForState:(MJRefreshState)state {
-  return self.stateTitles[@(state)];
+    return self.stateTitles[@(state)];
 }
 
 #pragma mark - 重写父类的方法

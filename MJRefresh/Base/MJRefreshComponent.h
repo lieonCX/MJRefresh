@@ -48,7 +48,6 @@ typedef void (^MJRefreshComponentEndRefreshingCompletionBlock)();
 @property (copy, nonatomic) MJRefreshComponentRefreshingBlock refreshingBlock;
 /** 设置回调对象和回调方法 */
 - (void)setRefreshingTarget:(id)target refreshingAction:(SEL)action;
-
 /** 回调对象 */
 @property (weak, nonatomic) id refreshingTarget;
 /** 回调方法 */
@@ -101,6 +100,6 @@ typedef void (^MJRefreshComponentEndRefreshingCompletionBlock)();
 @end
 
 @interface UILabel(MJRefresh)
-+ (instancetype)mj_label;
++ (instancetype)label;
 - (CGFloat)mj_textWith;
 @end
