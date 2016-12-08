@@ -7,7 +7,6 @@
 //
 
 #import "MJRefreshNormalHeader.h"
-#import "NSBundle+MJRefresh.h"
 
 @interface MJRefreshNormalHeader()
 {
@@ -21,7 +20,8 @@
 - (UIImageView *)arrowView
 {
     if (!_arrowView) {
-        UIImageView *arrowView = [[UIImageView alloc] initWithImage:[NSBundle mj_arrowImage]];
+        UIImage *image = [UIImage imageNamed:MJRefreshSrcName(@"arrow.png")] ?: [UIImage imageNamed:MJRefreshFrameworkSrcName(@"arrow.png")];
+        UIImageView *arrowView = [[UIImageView alloc] initWithImage:image];
         [self addSubview:_arrowView = arrowView];
     }
     return _arrowView;
@@ -46,7 +46,7 @@
     [self setNeedsLayout];
 }
 
-#pragma mark - 重写父类的方法
+#pragma makr - 重写父类的方法
 - (void)prepare
 {
     [super prepare];
@@ -77,13 +77,11 @@
         self.arrowView.mj_size = self.arrowView.image.size;
         self.arrowView.center = arrowCenter;
     }
-        
+    
     // 圈圈
     if (self.loadingView.constraints.count == 0) {
         self.loadingView.center = arrowCenter;
     }
-    
-    self.arrowView.tintColor = self.stateLabel.textColor;
 }
 
 - (void)setState:(MJRefreshState)state

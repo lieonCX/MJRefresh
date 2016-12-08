@@ -241,7 +241,7 @@
 @end
 
 @implementation UILabel(MJRefresh)
-+ (instancetype)mj_label
++ (instancetype)label
 {
     UILabel *label = [[self alloc] init];
     label.font = MJRefreshLabelFont;
@@ -265,10 +265,11 @@
 #else
         
         stringWidth = [self.text sizeWithFont:self.font
-                             constrainedToSize:size
-                                 lineBreakMode:NSLineBreakByCharWrapping].width;
+                            constrainedToSize:size
+                                lineBreakMode:NSLineBreakByCharWrapping].width;
 #endif
     }
     return stringWidth;
 }
+
 @end
