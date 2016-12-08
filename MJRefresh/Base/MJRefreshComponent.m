@@ -271,5 +271,4 @@
     }
     return stringWidth;
 }
-
 @end
