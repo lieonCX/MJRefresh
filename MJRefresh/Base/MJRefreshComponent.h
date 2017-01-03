@@ -12,7 +12,6 @@
 #import "UIView+MJExtension.h"
 #import "UIScrollView+MJExtension.h"
 #import "UIScrollView+MJRefresh.h"
-#import "NSBundle+MJRefresh.h"
 
 /** 刷新控件的状态 */
 typedef NS_ENUM(NSInteger, MJRefreshState) {
@@ -65,7 +64,6 @@ typedef void (^MJRefreshComponentEndRefreshingCompletionBlock)();
 @property (copy, nonatomic) MJRefreshComponentEndRefreshingCompletionBlock endRefreshingCompletionBlock;
 /** 结束刷新状态 */
 - (void)endRefreshing;
-- (void)endRefreshingWithCompletionBlock:(void (^)())completionBlock;
 /** 是否正在刷新 */
 - (BOOL)isRefreshing;
 /** 刷新状态 一般交给子类内部实现 */
@@ -101,5 +99,6 @@ typedef void (^MJRefreshComponentEndRefreshingCompletionBlock)();
 
 @interface UILabel(MJRefresh)
 + (instancetype)label;
+
 - (CGFloat)mj_textWith;
 @end
